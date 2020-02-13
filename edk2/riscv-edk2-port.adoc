@@ -66,10 +66,11 @@ For example, set 'GCC5_RISCV64_PREFIX' to '~/RiscVToolchain/riscv64-unknown-elf-
 before you build RISC-V edk2 port.
 
 ## Owners
-**Abner Chang** < abner.chang@hpe.com >
+**Abner Chang** < abner.chang@hpe.com > +
 **Gilbert Chen** < gilbert.chen@hpe.com >
 
 ## Contributors
-**Abner Chang** < abner.chang@hpe.com >
-**Gilbert Chen** < gilbert.chen@hpe.com >
+**Abner Chang** < abner.chang@hpe.com > +
+**Gilbert Chen** < gilbert.chen@hpe.com > +
+**Lindholm, Leif** < leif@nuviainc.com > +
 **Schaefer, Daniel Helmut** < daniel.schaefer@hpe.com >
