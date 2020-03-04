@@ -16,7 +16,7 @@ Below is the status of integrating of OpenSBI library in RISC-V EDK2 port.
 
 | OpenSBI Tag version on EDK2| Stable Tag|Status|
 |---|---|---|
-|v0.5|v0.6 (Not released yet)|Manually update OpenSBI to commit ID d6fa7f95 until Tag v0.6 is released.|
+|v0.6|v0.6|Verified|
 
 ## Supported RISC-V Platforms 
 Below table lists the current supported RISC-V platforms with UEFI edk2 RISC-V port,
