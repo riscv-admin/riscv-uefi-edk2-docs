@@ -12,6 +12,13 @@ Below are the repositories of RISC-V EDK2 development.
 |**EDK2**|master|https://github.com/riscv/riscv-edk2/tree/master|ca407c7 _(latest_)|
 |**EDK2 Platforms**|staging|https://github.com/riscv/riscv-edk2-platforms/tree/staging|1b9a7ba _(latest)_|
 
+Below are the upstream repositories with RISC-V port.
+
+| Repo | Branch | URI | Verified Commit ID |
+|---|---|---|---|
+|**EDK2**|master|https://github.com/tianocore/edk2/tree/master|ca407c7|
+|**EDK2 Platforms**|master|https://github.com/tianocore/edk2-platforms/tree/master|**not merged yet**|
+
 ## OpenSBI Integration
 Below is the status of integrating the OpenSBI library in RISC-V EDK2 port.
 
