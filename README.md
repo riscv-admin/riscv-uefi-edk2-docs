@@ -1,22 +1,24 @@
 # RISC-V UEFI EDK2 Port Documentations
-***
 
-This repository contains documents related to UEFI edk2 implementation of RISC-V port, which includes the edk2 RISC-V build guidance, design specification, UEFI protocol, PPI and etc.
+This repository contains documents related to UEFI EDK2 implementation of
+RISC-V port, which includes the edk2 RISC-V build guidance, design
+specification, UEFI protocol, PPI and etc.
 
 ## TianoCore EDK2 Repositories for RISC-V
-Below is the repositories of RISC-V EDK2 port on TianoCore GitHub. 
+Below are the repositories of RISC-V EDK2 development.
 
-| Repo.| Branch|URI|Verified Commit ID|
+| Repo | Branch | URI | Verified Commit ID |
 |---|---|---|---|
-|**EDK2 Staging**|RISC-V-V2|https://github.com/tianocore/edk2-staging/tree/RISC-V-V2|d0e9ded _(The latest_)|
-|**EDK2 Platforms**|devel-riscvplatforms|https://github.com/tianocore/edk2-platforms/tree/devel-riscvplatforms|6e9e115 _(The latest)_|
+|**EDK2**|master|https://github.com/riscv/riscv-edk2/tree/master|ca407c7 _(latest_)|
+|**EDK2 Platforms**|staging|https://github.com/riscv/riscv-edk2-platforms/tree/staging|1b9a7ba _(latest)_|
 
 ## OpenSBI Integration
-Below is the status of integrating of OpenSBI library in RISC-V EDK2 port.  
+Below is the status of integrating the OpenSBI library in RISC-V EDK2 port.
 
-| OpenSBI Tag version on EDK2| Stable Tag|Status|
+| OpenSBI Tag version on EDK2 | Stable Tag | Status |
 |---|---|---|
-|v0.6|v0.6|Verified|
+|v0.7|v0.7|WIP|
+|v0.6|v0.6|**Verified**|
 
 ## Supported RISC-V Platforms 
 Below table lists the current supported RISC-V platforms with UEFI edk2 RISC-V port,
@@ -34,7 +36,7 @@ Below table lists the current status of booting RISC-V platform,
 | Platform Name| EFI Shell|Boot loader|OS|
 |---|---|---|---|
 |Freedom U500 VC707 FPGA|**Yes**|N/A|N/A|
-|HiFive Unleashed (QEMU)|**Yes**|N/A|N/A|
+|HiFive Unleashed (QEMU)|**Yes**|GRUB2 WIP, Systemd-boot WIP|Linux WIP|
 |HiFive Unleashed |N/A|N/A|N/A|
 |AX25 + AE350 FPGA|N/A|N/A|N/A|
 
@@ -47,9 +49,7 @@ The folder [gcc-riscv-edk2-ci-toolchain](https://github.com/riscv/riscv-uefi-edk
 The toolchain binary is the external dependence to EDK2 CI and will be retrieved when running continuous integration testing.
 
 ## Contributors
-**Chang, Abner** < abner.chang@hpe.com ><br>
-**Chen, Gilbert** < gilbert.chen@hpe.com ><br>
-**Lindholm, Leif** < leif@nuviainc.com ><br>
-**Schaefer, Daniel Helmut** < daniel.schaefer@hpe.com >
-
-
+- Abner Chang <abner.chang@hpe.com>
+- Gilbert Chen <gilbert.chen@hpe.com>
+- Leif Lindholm <leif@nuviainc.com>
+- Daniel Schaefer <daniel.schaefer@hpe.com>
