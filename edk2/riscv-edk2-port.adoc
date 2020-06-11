@@ -1,55 +1,82 @@
-# RISC-V EDK2 Port Introduction
+# RISC-V edk2 Port Introduction
 ***
 
-## RISC-V EDK2 Package
+## RISC-V edk2 Port on Tianocore GitHub edk2 Repository
+The edk2 master branch currently supports RISC-V architecture. The release tag of RISC-V edk2 port is "edk2-stable202005", https://github.com/tianocore/edk2/tree/edk2-stable202005. +
+The essential code upstream to edk2 enables the build process for RISC-V on edk2 fundamental packages, such as MdePkg, MdeModulePkg, NetworkPkg, BaseTools and etc.
+GCC5 toolchain currently supports the build process of edk2 foundation for RISC-V 64-bit processor, the architecture is denominated as "RISCV64". +
+RISC-V GitHub also maintains the copy of edk2 repository (https://github.com/riscv/riscv-edk2), which is used as the development codebase for RISC-V architecture features based on edk2
+foundation.
 
-The branch (RISC-V-V2) on edk2-staging repository is RISC-V edk2 port with RISC-V
-OpenSbi (https://github.com/riscv/opensbi) library integrated.
-RiscVPkg provides the generic and common modules of RISC-V processors, while RiscVPlatformPkg provides common modules for RISC-V platforms.
+## RISC-V Packages on Tianocore GitHub edk2-platforms Repository
+**RISC-V processor package** and **RISC-V platform package** are current located on "devel-riscvplatforms" branch under edk2-platforms repository (https://github.com/tianocore/edk2-platforms).
+Those RISC-V related packages provides the fundamental edk2 drivers for RISC-V processor and common platform implementations for RISC-V platforms. +
+**RISC-V platform reference code** is located in silicon vendor specific folder under Platform in edk2-platforms repository as well. The implementations of RISC-V platforms are released by silicon vendor as the
+sample code for the OEMs. +
+RISC-V GitHub also maintains the copy of edk2-platforms repository (https://github.com/riscv/riscv-edk2-platforms) which is used as the development codebase for RISC-V processor features
+and platforms.
+
+## RISC-V edk2 Processor Package
+RISC-V processor package is located in ```Silicon/RISC-V/ProcessorPkg``` folder under edk2-platforms repository, which is the RISC-V edk2 port with RISC-V OpenSBI (https://github.com/riscv/opensbi)
+library integrated.
 
 ```
-RiscVPkg       - RISC-V processor package. This package provides RISC-V
-                 processor related protocols/libraries accroding to UEFI
-                 specification and edk2 implementations.
-               - Opensbitypes.h under RiscVPkg/Include is the OpenSBI external definitions for EDK2 framework,
-                 which leverages the macro OPENSBI_EXTERNAL_SBI_TYPES to use EDK2 type definitions.
-
-RiscVPlatformPkg  - RISC-V platform package. This package provides RISC-V platform common modules, libraries,
-                    PCDs and definitoins.
+ProcessorPkg   - 	RISC-V processor package. This package provides RISC-V processor
+					related protocols and libraries according to UEFI specification and
+					edk2 implementations.
+               -    OpensbiTypes.h under ProcessorPkg/Include is the OpenSBI external
+					definitions for edk2 framework, which leverages the macro
+					OPENSBI_EXTERNAL_SBI_TYPES to use edk2 type definitions.
 ```
 
-## RISC-V EDK2 Platform Packages
+## RISC-V edk2 Platform Packages
+RISC-V platform package is located in ```Platform/RISC-V/PlatformPkg``` under edk2-platforms repository, which provides the generic and common modules for RISC-V platforms.
 
-The branch (devel-riscvplatforms) on edk2-platforms repository is RISC-V platforms port which incorporate with RiscVPkg and RiscVPlatformPkg.
-Two edk2 RISC-V platforms are currently introduced in this branch,
 ```
-FreedomU500VC707Board       - SiFive Freedome U500 platform whcih is maintained under Platform/SiFive/U5SeriesPkg.
-
-FreedomU540HiFiveUnleashedBoard  - SiFive Freedome U540 HiFive Unleashed platform whcih is maintained under
-                                   Platform/SiFive/U5SeriesPkg.
+PlatformPkg     - 	RISC-V platform package. This package provides RISC-V platform common
+					modules, libraries, PCDs and definitions.
 ```
 
+## RISC-V edk2 Platform Reference Code
+RISC-V platform reference code is located under ```Platform/{Vendor}``` on edk2-platforms repository. It incorporates with ProcessorPkg, PlatformPkg and RISC-V core edk2 driver as 
+the reference platform for OEMs. Currently we have two sample platforms as listed below,
+```
+FreedomU500VC707Board            - 	SiFive Freedome U500 platform which is maintained
+									under Platform/SiFive/U5SeriesPkg.
 
-Refer to Platform/SiFive/U5Series/Readme.md on edk2-platform repository.
+FreedomU540HiFiveUnleashedBoard  - 	SiFive Freedome U540 HiFive Unleashed platform which
+									is maintained under Platform/SiFive/U5SeriesPkg.
+```
+Refer to ```Platform/SiFive/U5SeriesPkg/Readme.md``` on edk2-platforms repository.
 
-## Toolchain of RISC-V EDK2 port
-https://github.com/riscv/riscv-gnu-toolchain
-You have to clone the toolchain from above link and follow the installation
+## RISC-V Core edk2 Drivers
+RISC-V core edk2 drivers are released by silicon vendor which provide the processor-specific driver such as building up the SMBIOS record and core information.
+
+|===
+| Vendor | Model | Location
+
+|**SiFive**|E51|Silicon/E51
+|**SiFive**|U54|Silicon/U54
+|**SiFive**|U54MC Coreplex|Silicon/U54MCCoreplex
+|===
+
+## Toolchain of RISC-V edk2 port
+You have to clone the toolchain (https://github.com/riscv/riscv-gnu-toolchain) from above link and follow the installation
 guidance mentioned in README.md for building RISC-V edk2 port.
 
-This toolchain has been tested on below Linux distribution,
-Distributor ID: Ubuntu
-Description:    Ubuntu 16.04.6 LTS
-Release:        16.04
-GCC 9.2.0 is currently supported in RISC-V GNU toolchain.
+This toolchain has been tested on below Linux distribution, +
+**Distributor ID:** Ubuntu +
+**Description:**    Ubuntu 16.04.6 LTS +
+**Release:**        16.04 +
+GCC 9.2.0 is currently supported in RISC-V GNU toolchain. +
 
 Build issues may happen on other Linux distributions and have not been discovered
 due to it is out of edk2 RISC-V contribution scope.
 
-## EDK2 Build Target
+## edk2 Build Target
 "RISCV64" ARCH is the RISC-V architecture which currently supported and verified.
 The verified RISC-V toolchain is https://github.com/riscv/riscv-gnu-toolchain
-and the toolchain tag is "GCC5" which is declared in tools_def.txt.
+and the toolchain tag is "GCC5" which is declared in ```tools_def.txt```.
 Below is the edk2 build options for building RISC-V RV64 platform,
 ```
 build -a RISCV64 -p Platform/{Vendor}/{Platform}/{Platform}.dsc -t GCC5
@@ -62,7 +89,7 @@ build -a RISCV64 -p Platform/SiFive/U5SeriesPkg/FreedomU500VC707Board/U500.dsc
 
 Make sure RISC-V toolchain is built successfully and the toolchain binaries are generated in somewhere you specified when building toolchain.
 'GCC5_RISCV64_PREFIX' is the cross compilation prefix to toolchain binaries.
-For example, set 'GCC5_RISCV64_PREFIX' to '~/RiscVToolchain/riscv64-unknown-elf-'
+For example, set ```GCC5_RISCV64_PREFIX``` to ```~/RiscVToolchain/riscv64-unknown-elf-```
 before you build RISC-V edk2 port.
 
 ## Owners
