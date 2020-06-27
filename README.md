@@ -55,6 +55,14 @@ https://github.com/riscv/riscv-uefi-edk2-docs/blob/master/edk2/riscv-edk2-port.a
 The folder [gcc-riscv-edk2-ci-toolchain](https://github.com/riscv/riscv-uefi-edk2-docs/tree/master/gcc-riscv-edk2-ci-toolchain)  contains the toolchain binary for EDK2 CI testing on RISC-V architecture.
 The toolchain binary is the external dependence to EDK2 CI and will be retrieved when running continuous integration testing.
 
+## EDK2 RISC-V Firmware Image on QEMU
+We currently only verified SiFIve U540 EDK2 firmware image on QEMU (4.1.50). Below is the suggested QEMU options against to qemu-system-riscv64,
+
+    ./qemu-system-riscv64 -cpu sifive-u54 -machine sifive_u -bios u540.fd -m 4096 -smp cpus=5,maxcpus=5
+
+- You may want to add more options for your serial log output.
+- Memory size assigned to QEMU less than 1024K results in system hangs at PEI phase.
+
 ## Contributors
 - Abner Chang <abner.chang@hpe.com>
 - Gilbert Chen <gilbert.chen@hpe.com>
