@@ -36,6 +36,7 @@ RISC-V platform package is located in ```Platform/RISC-V/PlatformPkg``` under ed
 PlatformPkg     - 	RISC-V platform package. This package provides RISC-V platform common
 					modules, libraries, PCDs and definitions.
 ```
+Refer to https://github.com/tianocore/edk2-platforms/blob/master/Platform/RISC-V/PlatformPkg/Readme.md[Readme] for more information.
 
 ## RISC-V edk2 Platform Reference Code
 RISC-V platform reference code is located under ```Platform/{Vendor}``` on edk2-platforms repository. It incorporates with ProcessorPkg, PlatformPkg and RISC-V core edk2 driver as 
@@ -47,7 +48,7 @@ FreedomU500VC707Board            - 	SiFive Freedome U500 platform which is maint
 FreedomU540HiFiveUnleashedBoard  - 	SiFive Freedome U540 HiFive Unleashed platform which
 									is maintained under Platform/SiFive/U5SeriesPkg.
 ```
-Refer to ```Platform/SiFive/U5SeriesPkg/Readme.md``` on edk2-platforms repository.
+Refer to https://github.com/tianocore/edk2-platforms/blob/master/Platform/SiFive/U5SeriesPkg/Readme.md[Readme] for more information.
 
 ## RISC-V Core edk2 Drivers
 RISC-V core edk2 drivers are released by silicon vendor which provide the processor-specific driver such as building up the SMBIOS record and core information.
@@ -94,10 +95,11 @@ before you build RISC-V edk2 port.
 
 ## Owners
 **Abner Chang** < abner.chang@hpe.com > +
-**Gilbert Chen** < gilbert.chen@hpe.com >
+**Gilbert Chen** < gilbert.chen@hpe.com > +
+**Schaefer, Daniel** < daniel.schaefer@hpe.com >
 
 ## Contributors
 **Abner Chang** < abner.chang@hpe.com > +
 **Gilbert Chen** < gilbert.chen@hpe.com > +
 **Lindholm, Leif** < leif@nuviainc.com > +
-**Schaefer, Daniel Helmut** < daniel.schaefer@hpe.com >
+**Schaefer, Daniel** < daniel.schaefer@hpe.com >
