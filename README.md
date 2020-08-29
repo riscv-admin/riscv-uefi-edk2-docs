@@ -9,15 +9,15 @@ Below are the repositories of RISC-V EDK2 development.
 
 | Repo | Branch | URI | Verified Commit ID |
 |---|---|---|---|
-|**EDK2**|master|https://github.com/riscv/riscv-edk2/tree/master|78ab44c _(latest_)|
-|**EDK2 Platforms**|staging|https://github.com/riscv/riscv-edk2-platforms/tree/master|23863e9 _(latest)_|
+|**EDK2**|master|https://github.com/riscv/riscv-edk2/tree/master|latest|
+|**EDK2 Platforms**|master|https://github.com/riscv/riscv-edk2-platforms/tree/master|latest|
 
 Below are the upstream repositories with RISC-V port.
 
 | Repo | Branch | URI | Verified Commit ID |
 |---|---|---|---|
-|**EDK2**|master|https://github.com/tianocore/edk2/tree/master|78ab44c|
-|**EDK2 Platforms**|master|https://github.com/tianocore/edk2-platforms/tree/master|23863e9 _(latest)_|
+|**EDK2**|master|https://github.com/tianocore/edk2/tree/master|latest|
+|**EDK2 Platforms**|master|https://github.com/tianocore/edk2-platforms/tree/master|latest|
 
 ## OpenSBI Integration
 Below is the status of integrating the OpenSBI library in RISC-V EDK2 port.
@@ -33,7 +33,7 @@ Below table lists the current supported RISC-V platforms with UEFI edk2 RISC-V p
 |---|---|---|---|
 |**SiFive**|Freedom U500 VC707 FPGA|On board|**Done**|
 |**SiFive**|HiFive Unleashed (Freedom U540 SoC)|QEMU|**Done**|
-|**SiFive**|HiFive Unleashed (Freedom U540 SoC)|On board|WIP|
+|**SiFive**|HiFive Unleashed (Freedom U540 SoC)|On board|**Done**|
 |**Andes**|AX25 + AE350 FPGA|On board|WIP|
 
 ## Boot Status
@@ -43,7 +43,7 @@ Below table lists the current status of booting RISC-V platform,
 |---|---|---|---|
 |Freedom U500 VC707 FPGA|**Yes**|N/A|N/A|
 |HiFive Unleashed (QEMU)|**Yes**|GRUB2 WIP, Systemd-boot WIP|**Yes**|
-|HiFive Unleashed |N/A|N/A|N/A|
+|HiFive Unleashed |**Yes**|N/A|**Yes**|
 |AX25 + AE350 FPGA|N/A|N/A|N/A|
 
 ## RISC-V EDK2 Port Introduction and Build Guidance
