@@ -29,22 +29,24 @@ Below is the status of integrating the OpenSBI library in RISC-V EDK2 port.
 ## Supported RISC-V Platforms 
 Below table lists the current supported RISC-V platforms with UEFI edk2 RISC-V port,
 
-| Vendor| Platform Name| Execution Environment|Status|
-|---|---|---|---|
-|**SiFive**|Freedom U500 VC707 FPGA|On board|**Done**|
-|**SiFive**|HiFive Unleashed (Freedom U540 SoC)|QEMU|**Done**|
-|**SiFive**|HiFive Unleashed (Freedom U540 SoC)|On board|**Done**|
-|**Andes**|AX25 + AE350 FPGA|On board|WIP|
+| Vendor     | Platform Name                       | Execution Environment | Status   |
+|------------|-------------------------------------|-----------------------|----------|
+| **SiFive** | Freedom U500 VC707 FPGA             | On board              | **Done** |
+| **SiFive** | HiFive Unleashed (Freedom U540 SoC) | QEMU                  | **Done** |
+| **SiFive** | HiFive Unleashed (Freedom U540 SoC) | On board              | **Done** |
+| **QEMU**   | VirtIO machine                      | QEMU                  | WIP      |
+| **Andes**  | AX25 + AE350 FPGA                   | On board              | WIP      |
 
 ## Boot Status
 Below table lists the current status of booting RISC-V platform,
 
-| Platform Name| EFI Shell|Boot loader|Linux Kernel|
-|---|---|---|---|
-|Freedom U500 VC707 FPGA|**Yes**|N/A|N/A|
-|HiFive Unleashed (QEMU)|**Yes**|GRUB2 WIP, Systemd-boot WIP|**Yes**|
-|HiFive Unleashed |**Yes**|N/A|**Yes**|
-|AX25 + AE350 FPGA|N/A|N/A|N/A|
+| Platform Name          | EFI Shell | Boot loader                | Linux Kernel |
+|------------------------|-----------|----------------------------|--------------|
+| Freedom U500 VC707 FPGA| **Yes**   | N/A                        | N/A          |
+| HiFive Unleashed (QEMU)| **Yes**   | GRUB2 WIP, Systemd-boot WIP| **Yes**      |
+| HiFive Unleashed       | **Yes**   | N/A                        | **Yes**      |
+| VirtIO machine (QEMU)  | N/A       | N/A                        | N/A          |
+| AX25 + AE350 FPGA      | N/A       | N/A                        | N/A          |
 
 ## RISC-V EDK2 Port Introduction and Build Guidance
 Please refer to document from below link,
