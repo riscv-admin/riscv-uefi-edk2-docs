@@ -80,7 +80,27 @@ under review, hopefully landing in 5.10.
 - [GNU toolchain](https://github.com/riscv/riscv-uefi-edk2-docs/raw/master/gcc-riscv-edk2-ci-toolchain/gcc-riscv-9.2.0-2020.04-x86_64_riscv64-unknown-gnu.tar.xz)
 
 ### Building an running
-1. Building the kernel and device tree
+1. Build an initramfs
+
+You can do that with your preferred method. For example busybox or buildroot.
+Or you can even take the pre-built one that Fedora distributes for RISC-V.
+
+You can either embed that into the kernel with the config:
+
+```
+CONFIG_INITRAMFS_SOURCE="/usr/src/initramfs.cpio"
+```
+
+or as a separate file on disk: `initramfs.cpio`. For that you need the kernel config:
+
+```
+CONFIG_EFI_GENERIC_STUB_INITRD_CMDLINE_LOADER=y
+```
+
+until we include a UEFI shell command to load the initrd into the system config
+table. See https://github.com/riscv/riscv-edk2-platforms/issues/6
+
+2. Building the kernel and device tree
 
 ```
 cd linux
@@ -99,8 +119,9 @@ mkfs.msdos -C linux.iso 64000
 sudo losetup /dev/loop0 linux.iso
 sudo mount /dev/loop0 /mnt
 
-# Copy the kernel that you built previously
+# Copy the kernel and initramfs that you built previously
 sudo cp linux-riscv64.efi /mnt
+sudo cp initramfs.cpio /mnt
 sudo umount /mnt
 sudo losetup -d /dev/loop0
 
@@ -167,9 +188,9 @@ map -r
 fs0:
 
 # On HifiveUnleashed
-linux-riscv64.efi root=/dev/mmcblk0p2 rootwait console=ttySIF0 earlycon
+linux-riscv64.efi root=/dev/mmcblk0p2 rootwait console=ttySIF0 earlycon initrd=\initramfs.cpio
 # On QEMU
-linux-riscv64.efi root=/dev/ram rootwait console=ttySIF0 earlycon
+linux-riscv64.efi root=/dev/ram rootwait console=ttySIF0 earlycon initrd=\initramfs.cpio
 ```
 
 ## Contributors
