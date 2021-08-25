@@ -21,20 +21,20 @@ RISC-V processor package is located in ```Silicon/RISC-V/ProcessorPkg``` folder 
 library integrated.
 
 ```
-ProcessorPkg   - 	RISC-V processor package. This package provides RISC-V processor
-					related protocols and libraries according to UEFI specification and
-					edk2 implementations.
-               -    OpensbiTypes.h under ProcessorPkg/Include is the OpenSBI external
-					definitions for edk2 framework, which leverages the macro
-					OPENSBI_EXTERNAL_SBI_TYPES to use edk2 type definitions.
+ProcessorPkg   -  RISC-V processor package. This package provides RISC-V processor
+                  related protocols and libraries according to UEFI specification and
+                  edk2 implementations.
+               -  OpensbiTypes.h under ProcessorPkg/Include is the OpenSBI external
+                  definitions for edk2 framework, which leverages the macro
+                  OPENSBI_EXTERNAL_SBI_TYPES to use edk2 type definitions.
 ```
 
 ## RISC-V edk2 Platform Packages
 RISC-V platform package is located in ```Platform/RISC-V/PlatformPkg``` under edk2-platforms repository, which provides the generic and common modules for RISC-V platforms.
 
 ```
-PlatformPkg     - 	RISC-V platform package. This package provides RISC-V platform common
-					modules, libraries, PCDs and definitions.
+PlatformPkg    -  RISC-V platform package. This package provides RISC-V platform common
+                  modules, libraries, PCDs and definitions.
 ```
 Refer to https://github.com/tianocore/edk2-platforms/blob/master/Platform/RISC-V/PlatformPkg/Readme.md[Readme] for more information.
 
@@ -42,11 +42,11 @@ Refer to https://github.com/tianocore/edk2-platforms/blob/master/Platform/RISC-V
 RISC-V platform reference code is located under ```Platform/{Vendor}``` on edk2-platforms repository. It incorporates with ProcessorPkg, PlatformPkg and RISC-V core edk2 driver as 
 the reference platform for OEMs. Currently we have two sample platforms as listed below,
 ```
-FreedomU500VC707Board            - 	SiFive Freedome U500 platform which is maintained
-									under Platform/SiFive/U5SeriesPkg.
+FreedomU500VC707Board  -  SiFive Freedome U500 platform which is maintained
+                          under Platform/SiFive/U5SeriesPkg.
 
 FreedomU540HiFiveUnleashedBoard  - 	SiFive Freedome U540 HiFive Unleashed platform which
-									is maintained under Platform/SiFive/U5SeriesPkg.
+                                    is maintained under Platform/SiFive/U5SeriesPkg.
 ```
 Refer to https://github.com/tianocore/edk2-platforms/blob/master/Platform/SiFive/U5SeriesPkg/Readme.md[Readme] for more information.
 
@@ -95,7 +95,6 @@ before you build RISC-V edk2 port.
 
 ## Owners
 **Abner Chang** < abner.chang@hpe.com > +
-**Gilbert Chen** < gilbert.chen@hpe.com > +
 **Schaefer, Daniel** < daniel.schaefer@hpe.com >
 
 ## Contributors
